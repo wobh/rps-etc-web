@@ -49,14 +49,15 @@ function make_play_checker (hands) {
     });
 };
 
-function make_play_input_getter (hands) {
+function make_play_input_getter (hands, name) {
+    var prompt_text = "Choose your weapon, " + name + " "
     return (function () {
 	var play_checker = make_play_checker(hands);
 	var play;
 	var stop = false;
 	do {
 	    try {
-		play = prompt("Choose your weapon ");
+		play = prompt(prompt_text).toLowerCase();
 		stop = play_checker(play);
 	    } catch (error) {
 		alert(error.message);
@@ -69,7 +70,7 @@ function make_play_input_getter (hands) {
 var inputPlayer = function (name, hands) {
     return {
 	"name": name,
-	"getPlay": make_play_input_getter(hands)
+	"getPlay": make_play_input_getter(hands, name)
     };
 };
 
@@ -115,6 +116,7 @@ function eval_game (hands, player0, player1) {
     var win;
     var play0 = player0.getPlay();
     var play1 = player1.getPlay();
+
     hands.forEach(function (hand) {
 	if (hands_match_play_p(play0, play1, hand)) {
 	    win = hand;
@@ -138,7 +140,7 @@ function eval_game (hands, player0, player1) {
 };
 
 function main (hands) {
-    var player0 = inputPlayer("Player0", hands);
-    var player1 = randomPlayer("Player1", hands);
+    var player0 = new inputPlayer("Player0", hands);
+    var player1 = new randomPlayer("Player1", hands);
     console.log(eval_game(hands, player0, player1));
 };
