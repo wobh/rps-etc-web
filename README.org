@@ -1,0 +1,30 @@
+#+TITLE:     Rock-Paper-Scissors-etc
+#+AUTHOR:    William Clifford
+#+EMAIL:     wobh@yahoo.com
+#+DATE:      2013-02-18 Mon
+#+DESCRIPTION: Web-based Rock Paper Scissors etc game
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:6 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+
+* About
+
+This is a Rock-Paper-Scissors web game. For now all I have is javascript file which contains the logic of the game.
+
+* Functions
+
+In the console you can run =main= with the following options:
+
+- =main(rps-hands)= :: will play a standard Rock-Paper-Scissors game against a computer player which randomly selects a hand.
+- =main(rpsls-hands)= :: will play a Rock-Paper-Scissors-Lizard-Spock game against the computer player which randomly selects a hand.
+
+* TODO
+- create web interface
+- create cleverer computer options, perhaps the computer could use statistics to guess the next play. 
